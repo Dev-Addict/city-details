@@ -1,0 +1,39 @@
+.clock {
+    background-color: #333 !important;
+    width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: #ccc !important;
+    color: #ddd !important;
+    text-align: center;
+    margin: 20px !important;
+}
+
+.time-zone-input-label {
+    color: #fff !important;
+    font-size: 2rem !important;
+    margin-top: 20px !important;
+    margin-bottom: 15px !important;
+}
+
+.time-zone-input {
+    text-align: center;
+    background-color: #444 !important;
+    color: #fff !important;
+    border: solid 2px #ddd !important;
+    font-size: 1.5rem !important;
+    padding: 0.5rem !important;
+}
+
+.time {
+    font-size: 3rem;
+    padding: 10px;
+    margin: 10px;
+}
+
+.clock-title {
+    text-align: left;
+    font-size: 4rem;
+    margin-top: 15px;
+}
