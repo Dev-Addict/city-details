@@ -66,3 +66,19 @@
     padding: 10px;
     text-align: left;
 }
+
+.loading, .error {
+    background-color: #444 !important;
+}
+
+.loading .icon {
+    color: #fff !important;
+    font-size: 5rem !important;
+    margin-top: 30px;
+}
+
+.error {
+    color: #fff !important;
+    font-size: 5rem !important;
+    padding: 20px;
+}

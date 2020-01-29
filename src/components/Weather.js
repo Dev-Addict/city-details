@@ -25,7 +25,6 @@ class Weather extends Component {
             errorMessage: '', 
             showState: showState.NOTHING_TO_SHOW
         };
-        this.requestData('Tehran');
         this.requestData = this.requestData.bind(this);
         this.showState = this.showState.bind(this);
         this.onCityInputChanged = this.onCityInputChanged.bind(this);
@@ -137,7 +136,11 @@ class Weather extends Component {
                     </div>
                 );
             case showState.LOADING:
-                return <di>OOO</di>;
+                return (
+                    <div className="loading">
+                        <i className="icon download"></i>
+                    </div>
+                );
             case showState.READY:
                 return (
                     <div>
@@ -214,7 +217,39 @@ class Weather extends Component {
                     </div>
                 );
             case showState.ERROR:
-                return <div>error</div>;
+                return (
+                    <div>
+                        <form className="ui form search-form" onSubmit={this.onCityFormSubmited}>
+                            <div className="field">
+                                <label className="input-lable">City</label>
+                                <input type="text" value={this.state.city} className="form-input"  onChange={this.onCityInputChanged} />
+                            </div>
+                            <button type="submit" className="ui vertical animated button primary search-button" tabIndex="0">
+                                <div className="hidden content" id="color-black">search</div>
+                                <div className="visible content">
+                                    <i className="search icon" id="color-black"></i>
+                                </div>
+                            </button>
+                        </form>
+                        <form className="ui form search-form" onSubmit={this.onGeoFormSubmited}>
+                            <div className="field">
+                                <label className="input-lable">Lon</label>
+                                <input type="text" value={this.state.lon} className="form-input" onChange={this.onLonInputChanged}/>
+                            </div>
+                            <div className="field">
+                                <label className="input-lable">Lat</label>
+                                <input type="text" value={this.state.lat} className="form-input" onChange={this.onLatInputChanged}/>
+                            </div>
+                            <button type="submit" className="ui vertical animated button primary search-button" tabIndex="0">
+                                <div className="hidden content" id="color-black">search</div>
+                                <div className="visible content">
+                                    <i className="search icon" id="color-black"></i>
+                                </div>
+                            </button>
+                        </form>
+                        <div className="error">error</div>
+                    </div>
+                );
             default:
                 return <div></div>;
         }
