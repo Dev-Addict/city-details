@@ -11,6 +11,10 @@ class Clock extends Component {
             timeZone = parseFloat(props.timeZone);
         }
 
+        if(timeZone.toString() === 'NaN') {
+            timeZone = 0;
+        }
+
         this.state = {hour: 0, minute: 0, second: 0, miliSecond: 0, timeZone};
 
         this.updateClock = this.updateClock.bind(this);
@@ -51,6 +55,11 @@ class Clock extends Component {
         } else if(timeZone < -13) {
             timeZone = -13
         }
+
+        if(timeZone.toString() === 'NaN') {
+            timeZone = 0;
+        }
+
         this.setState({timeZone});
     }
 
